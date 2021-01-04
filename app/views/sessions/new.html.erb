@@ -1,0 +1,19 @@
+    <div class="form-page session-main log small">
+      <img alt="Open" id="simple-menu" class="icon-menu" src="https://content.codecademy.com/projects/z2d/stories/menu-white.svg" />
+      <div class="container"> 
+        <h1>Log in</h1> 
+        <div class="form form-column">
+            
+          <%= form_for(:session, :url => sessions_path, :html => { :class => "form-section" }) do |f| %>
+            <label for="email">E-mail</label>
+            <%= f.email_field :email %>
+            <br><br>
+            <label for="password">Password</label>
+            <%= f.password_field :password %>
+            <br><br><br>
+            <%= f.submit "Log in", :class => "btn btn-submit" %>
+          <% end %>
+            
+        </div>
+      </div>
+    </div>

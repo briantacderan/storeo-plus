@@ -1,0 +1,22 @@
+        <div class="about-main"> 
+            <img alt="Open" id="simple-menu" class="icon-menu" src="https://content.codecademy.com/projects/z2d/stories/menu-white.svg" />
+            <div class="content container"> 
+                <h1>Relive your favorite memories</h1>
+            </div>
+        </div>
+
+        <div class="about-supporting">
+            <div class="container">
+                <h2>No more sorting through photos</h2>
+                <p class="description">Storeo automatically finds your best photos and creates a new travelogue. This way you can capture and share your special moments in fresh new ways.</p>
+                <p class="button">
+                    
+                    <% if current_user %>
+                    <%= link_to "Start", albums_path %>
+                    <% else %>
+                    <%= link_to "Sign up", new_user_path %>
+                    <% end %>
+                    
+                </p>
+            </div>
+        </div>

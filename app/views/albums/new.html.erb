@@ -1,0 +1,19 @@
+    <div id="album-new" class="form-page contact-main small">
+      <img alt="Open" id="simple-menu" class="icon-menu" src="https://content.codecademy.com/projects/z2d/stories/menu-white.svg" />
+      <div class="container"> 
+        <h1>New album</h1> 
+        <div class="form form-column">
+            
+          <%= form_for(:album, :url => albums_path, :html => { :class => "form-section" }) do |f| %>
+            <label for="image">Album name</label>
+            <%= f.text_field :title %>
+            <br><br>
+            <label for="caption">Cover image URL</label>
+            <%= f.text_field :image %>
+            <br><br><br>
+            <%= f.submit "Create", :class => "btn btn-submit" %>
+          <% end %>
+            
+        </div>
+      </div>
+    </div>

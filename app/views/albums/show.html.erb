@@ -1,0 +1,40 @@
+    <div class="albums photos">
+      <img alt="Open" id="simple-menu" class="icon-menu" src="https://content.codecademy.com/projects/z2d/stories/menu-black.svg" />
+      <div class="container">
+
+        <h1><%= @album.title %></h1>
+        <div class="row">
+            
+          <% @photos.each do |photo| %>
+          <div class="item">
+            <div class="img-container">
+              <%= image_tag photo.image %>
+            </div>
+              
+            <% if current_user.id != @album.user_id %>
+            <div class="photo-info">
+              <h2><%= photo.caption %></h2> 
+            </div>
+            <% else %>
+            <div class="photo-info">
+              <p><%= photo.caption %> | <%= link_to "Delete", album_path({:image => photo.image}), method: "delete" %></p> 
+            </div>
+            <% end %>
+              
+          </div>
+          <% end %>
+          
+          <% if current_user.id == @album.user_id %>
+          <div class="item col-md-4">
+            <div class="img-container">
+              <img src="https://content.codecademy.com/courses/rails-auth/img/fotofoto-logo.svg" />
+            </div>
+            <div class="photo-info">
+              <p>New Photo | <%= link_to "Add", edit_album_path(@album) %></p> 
+            </div>
+          </div>
+          <% end %>
+            
+        </div>
+      </div>
+    </div>
